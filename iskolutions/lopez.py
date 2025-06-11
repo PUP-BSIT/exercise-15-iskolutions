@@ -317,25 +317,24 @@ class TypeMemorizePup:
         system("cls")
 
     def process_choice(self, choice):
-        match choice:
-            case 1:
-                self.test_vision()
-            case 2:
-                self.test_mission()
-            case 3:
-                self.test_pillars()
-            case 4:
-                self.test_core_value()
-            case 5:
-                self.know_pup()
-            case 6:
-                system("cls")
-                self.display_final_score()
-            case _:
-                system("cls")
-                print("Invalid choice! Enter a valid choice.")
-                print("Press Enter to continue...")
-                input()
+        if choice == 1:
+            self.test_vision()
+        elif choice == 2:
+            self.test_mission()
+        elif choice == 3:
+            self.test_pillars()
+        elif choice == 4:
+            self.test_core_value()
+        elif choice == 5:
+            self.know_pup()
+        elif choice == 6:
+            system("cls")
+            self.display_final_score()
+        else:
+            system("cls")
+            print("Invalid choice! Enter a valid choice.")
+            print("Press Enter to continue...")
+            input()
 
     def menu(self):
         choice = UNSET_OPTION
