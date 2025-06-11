@@ -128,14 +128,10 @@ class BudgetTracker:
         elif choice == 5:
             self.reset_budget()
         elif choice == 6:
-            print("\nReturning to main menu...")
-            input("Press enter to continue...")
-            return True  #Exit menu loop
+            system('cls')
         else:
             print("\nInvalid choice. Try again.")
             input("Press enter to return...")
-            
-        return False  #Continue menu loop
     
     def menu(self):
         choice = UNSET_OPTION
