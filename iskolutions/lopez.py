@@ -291,31 +291,33 @@ class TypeMemorizePup:
         
     def display_final_score(self):
         print("=========== FINAL SCORE ===========")
-        print(f"Correct answers: {self.score}/"
-              + f"{self.attempt}")
+        print(f"Correct answers: {self.score} / {self.attempt}")
 
-        if self.attempt > 0:
-            accuracy = (self.score / 
-                        self.attempt) * PERCENTAGE_MULTIPLIER
+        if self.attempt > DEFAULT_ATTEMPT:
+            accuracy = (self.score / self.attempt) * PERCENTAGE_MULTIPLIER
             print(f"Accuracy: {accuracy}%")
-
-            if accuracy >= EXCELLENT:
-                print("\nExcellent! You've mastered PUP's "
-                      + "vision, mission, values and goals!")
-            elif accuracy >= VERY_GOOD:
-                print("\nVery good! You know PUP well!")
-            elif accuracy >= GOOD:
-                print("\nGood effort! Keep practicing!")
-            else:
-                print("\nKeep studying PUP's vision, "
-                      + "mission, values and goals!")
-                print("Because finals is waving...")
+            
+            self.display_accuracy_feedback(accuracy)
         else:
             print("\nNo attempts made yet!")
-        print("==================================")
-        input()
-        system("cls")
+            print("==================================")
+            input()
+            system("cls")
 
+    def display_accuracy_feedback(self, accuracy):
+        """Display feedback message based on accuracy score."""
+        if accuracy >= EXCELLENT:
+            print("\nExcellent! You've mastered PUP's "
+                + "vision, mission, values and goals!")
+        elif accuracy >= VERY_GOOD:
+            print("\nVery good! You know PUP well!")
+        elif accuracy >= GOOD:
+            print("\nGood effort! Keep practicing!")
+        else:
+            print("\nKeep studying PUP's vision, mission, values and "
+                  + "goals!")
+            print("Because finals is waving...")
+            
     def process_choice(self, choice):
         if choice == 1:
             self.test_vision()
