@@ -24,3 +24,7 @@ class FrancoCalculator:
     def subtract(self):
         self.result = self.num1 - self.num2
         self.display_result()
+
+    def multiply(self):
+        self.result = self.num1 * self.num2
+        self.display_result()
