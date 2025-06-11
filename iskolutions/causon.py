@@ -49,6 +49,22 @@ class DiceRoller:
             
         input("\nPress Enter to Continue...")
         
+    def roll_multiple_dice(self):
+        # Prompt user for number of rolls until valid input is received.
+        while True:
+            system("cls")
+            try:
+                number_of_dice = int(input("Enter how many dice to roll: "))
+            except ValueError:
+                print("Invalid input. Please enter a whole number.")
+            
+            # End the loop if number is valid and positive
+            if number_of_dice > 0:
+                self.roll_dice(number_of_dice)
+                break
+            
+            print("Enter a positive number.")
+                
     def display_get_choice(self):
         system("cls")
         print("============RPG Game================")
@@ -73,7 +89,7 @@ class DiceRoller:
         if choice == 1:
             self.roll_dice(DEFAULT_NUMBER_OF_DICE)
         elif choice == 2:
-            pass
+            self.roll_multiple_dice()
         elif choice == 3:
             pass
         elif choice == 4:
@@ -96,3 +112,6 @@ class DiceRoller:
             # display menu
             choice = self.display_get_choice()
             self.evaluate_choice(choice)
+            
+game = DiceRoller()
+game.menu()
