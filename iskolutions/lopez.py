@@ -309,3 +309,9 @@ class TypeMemorizePup:
                 print("Invalid choice! Enter a valid choice.")
                 print("Press Enter to continue...")
                 input()
+
+    def menu(self):
+        choice = UNSET_OPTION
+        while choice != EXIT_OPTION:
+            choice = self.display_get_choice()
+            self.process_choice(choice)
