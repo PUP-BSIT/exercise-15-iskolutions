@@ -54,14 +54,19 @@ class FrancoCalculator:
 
     def process_choice(self, choice):
         if choice == 1:
+            self.input_numbers()
             self.add()
         elif choice == 2:
+            self.input_numbers()
             self.subtract()
         elif choice == 3:
+            self.input_numbers()
             self.multiply()
         elif choice == 4:
+            self.input_numbers()
             self.divide()
         elif choice == 5:
+            self.input_numbers()
             self.power()
         elif choice == 6:
             print("\nReturning to main menu...")
