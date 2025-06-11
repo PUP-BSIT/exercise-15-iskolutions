@@ -35,7 +35,7 @@ class FrancoCalculator:
         else:
             print("Error: Division by zero.")
             self.result = None
-            
+
         self.display_result()
 
     def power(self):
@@ -50,6 +50,14 @@ class FrancoCalculator:
             print("No result to display.")
 
     def menu(self):
+        operations = {
+            '1': self.add,
+            '2': self.subtract,
+            '3': self.multiply,
+            '4': self.divide,
+            '5': self.power
+        }
+
         while True:
             self.clear_screen()
             print("=== Franco Calculator Menu ===")
@@ -62,24 +70,16 @@ class FrancoCalculator:
 
             choice = input("Choose operation: ")
 
+            # Exit condition is clearly stated early
             if choice == '6':
-                break   # Exit the menu loop
+                break  # Exit the menu loop immediately
 
-            if choice in ['1', '2', '3', '4', '5']:
+            operation = operations.get(choice)
+
+            if operation:
                 self.input_numbers()
-
-                if choice == '1':
-                    self.add()
-                elif choice == '2':
-                    self.subtract()
-                elif choice == '3':
-                    self.multiply()
-                elif choice == '4':
-                    self.divide()
-                elif choice == '5':
-                    self.power()
-
-                input("\nPress Enter to continue...")
+                operation()
             else:
                 print("Invalid choice. Try again.")
-                input("Press Enter to continue...")
+
+            input("\nPress Enter to continue...")
