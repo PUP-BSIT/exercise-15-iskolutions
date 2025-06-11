@@ -1,4 +1,4 @@
-from iskolutions import causon, franco, efondo
+from iskolutions import causon, franco, efondo, lopez
 from os import system
 
 UNSET_OPTION = -1
@@ -9,7 +9,7 @@ def display_get_choice():
     print("1. Miko Lorenz O. Causon")
     print("2. Fernette Pearl M. Franco")
     print("3. Aaron Kyle D. Efondo")
-    print("4. ")
+    print("4. Jakim D. Lopez")
     print("5. ")
     print("6. Exit")
     print("========================================")
@@ -36,7 +36,8 @@ def process_choice(choice):
             budget_tracker = efondo.BudgetTracker(user_nickname)
             budget_tracker.menu()
         case 4:
-            pass
+            lopez_game = lopez.TypeMemorizePup()
+            lopez_game.menu()
         case 5:
             pass
         case 6:
