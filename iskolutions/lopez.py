@@ -74,6 +74,7 @@ class TypeMemorizePup:
         self.attempt = 0
 
     def test_vision(self):
+        system("cls")
         print("=================== PUP - VISION ====================")
         self.display_answer_guidelines()
         user_input = input("\nType your answer: ").lower().strip()
@@ -94,6 +95,7 @@ class TypeMemorizePup:
         input()
 
     def test_mission(self):
+        system("cls")
         print("================== PUP - MISSION ===================")
         self.display_answer_guidelines()
         user_input = input("\nType your answer: ").lower().strip()
@@ -114,6 +116,7 @@ class TypeMemorizePup:
         input()
 
     def test_pillars(self):
+        system("cls")
         print("================== PUP - PILLARS ===================")
         print("Which pillar would you like to test?")
         print("\n1. Teaching and Learning (Pillar 1)")
@@ -125,15 +128,15 @@ class TypeMemorizePup:
         try:
             pillar_choice = int(input("\nEnter your choice (1-4): "))
             if pillar_choice == 1:
-                self.test_pillar("pillar1", ["strategic_goal1", 
+                self.test_strategic_goals("pillar1", ["strategic_goal1", 
                                              "strategic_goal2", 
                                              "strategic_goal3"])
             elif pillar_choice == 2:
-                self.test_pillar("pillar2", ["strategic_goal4", 
+                self.test_strategic_goals("pillar2", ["strategic_goal4", 
                                              "strategic_goal5", 
                                              "strategic_goal6"])
             elif pillar_choice == 3:
-                self.test_pillar("pillar3", ["strategic_goal7", 
+                self.test_strategic_goals("pillar3", ["strategic_goal7", 
                                              "strategic_goal8", 
                                              "strategic_goal9",
                                              "strategic_goal10", 
@@ -141,11 +144,13 @@ class TypeMemorizePup:
             elif pillar_choice == 4:
                 return
             else:
+                system("cls")
                 print("Invalid choice. Please select 1-4.")
                 print("\nPress Enter to continue...")
                 input()
                 self.test_pillars()
         except ValueError:
+            system("cls")
             print("Invalid input. Please enter a valid input.")
             print("\nPress Enter to continue...")
             input()
@@ -180,8 +185,9 @@ class TypeMemorizePup:
         
         print("\nPress Enter to return to Main menu...")
         input()
-
+                        
     def test_core_value(self):
+        system("cls")
         print("================ PUP - CORE VALUES =================")
         print("\nI N S P I R E D: ")
         
@@ -216,6 +222,7 @@ class TypeMemorizePup:
         input()
 
     def know_pup(self):
+        system("cls")
         print("==================== KNOW PUP =======================")
         print("\n--- VISION ---")
         print(self.content["vision"])
@@ -253,10 +260,11 @@ class TypeMemorizePup:
               + "case are not distinct from each other.")
         print("- INCOMPLETE answer or any probable minor mistakes "
               + "will NOT be counted.")
-        print("- Proper comma placement is REQUIRED to be counted.")
+        print("- Proper comma placement is REQUIRED to be counted")
         print("=====================================================")
 
     def display_get_choice(self):
+        system("cls")
         print("\n====== WELCOME TO JAKIM'S TYPE & MEMORIZE PUP ======")
         print("What option would you like to test first?")
         print("1. Vission")
@@ -270,11 +278,12 @@ class TypeMemorizePup:
         try:
             return int(input("\nEnter your choice: "))
         except ValueError:
+            system("cls")
             print("Invalid input! Enter a valid input.")
             print("Press Enter to continue...")
             input()
             return UNSET_OPTION
-        
+
     def process_choice(self, choice):
         match choice:
             case 1:
@@ -288,6 +297,7 @@ class TypeMemorizePup:
             case 5:
                 self.know_pup()
             case 6:
+                system("cls")
                 print("=========== FINAL SCORE ===========")
                 print(f"Correct answers: {self.score}/"
                       + f"{self.attempt}")
@@ -313,6 +323,7 @@ class TypeMemorizePup:
                 print("==================================")
                 return EXIT_OPTION
             case _:
+                system("cls")
                 print("Invalid choice! Enter a valid choice.")
                 print("Press Enter to continue...")
                 input()
