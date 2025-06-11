@@ -28,3 +28,23 @@ class BudgetTracker:
             system("cls")
             print("Invalid input! Please enter a number.")
             return UNSET_OPTION
+        
+    def process_choice(self, choice):
+        if choice == 1:
+            pass
+        elif choice == 2:
+            pass
+        elif choice == 3:
+            pass
+        elif choice == 4:
+            pass
+        elif choice == 5:
+            pass
+        elif choice == 6:
+            print("\nReturning to main menu...")
+            input("Press enter to continue...")
+            return True  #Exit menu loop
+        
+        print("\nInvalid choice. Try again.")
+        input("Press enter to return...")
+        return False  #Continue menu loop
