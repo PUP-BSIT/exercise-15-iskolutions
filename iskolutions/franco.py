@@ -62,7 +62,7 @@ class FrancoCalculator:
             choice = input("Choose operation: ")
 
             if choice == '6':
-                break
+                break   # Exit the menu loop
 
             if choice in ['1', '2', '3', '4', '5']:
                 self.input_numbers()
