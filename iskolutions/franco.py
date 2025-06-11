@@ -16,3 +16,7 @@ class FrancoCalculator:
         except ValueError:
             print("Invalid input. Please enter numbers.")
             self.input_numbers()
+
+    def add(self):
+        self.result = self.num1 + self.num2
+        self.display_result()
