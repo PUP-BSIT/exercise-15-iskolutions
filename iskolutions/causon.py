@@ -61,15 +61,16 @@ class DiceRoller:
     def roll_multiple_dice(self):
         # Prompt user for number of rolls until valid input is received.
         while True:
-            prompt = "Enter how many dice to roll: "
+            prompt = "Enter how many dice to roll: [2-10]"
             number_of_dice = self.get_number_input(prompt)
             
             # End the loop if number is valid and positive
-            if number_of_dice and number_of_dice > 0:
+            if number_of_dice and (1 < number_of_dice <= 10):
                 self.roll_dice(number_of_dice)
                 break
             
             print("Enter a positive number.")
+            input("\nPress Enter to Continue.")
     
     def set_dice(self):
         # Prompt user for the number of dice faces until it gets a valid input
