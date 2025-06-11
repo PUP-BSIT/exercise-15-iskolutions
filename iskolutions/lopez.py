@@ -85,3 +85,23 @@ class TypeMemorizePup:
             
         print("\nPress Enter to return to Main menu...")
         input()
+
+    def test_mission(self):
+        print("================== PUP - MISSION ===================")
+        self.display_answer_guidelines()
+        user_input = input("\nType your answer: ").lower().strip()
+        self.attempt += 1
+
+        if user_input == self.content['mission'].lower().strip():
+            print("=================================================")
+            print("Correct! You got it right!")
+            print("=================================================")
+            self.score += 1
+        else:
+            print("\nIncorrect. The correct answer is:")
+            print("=================================================")
+            print(f"{self.content['mission']}")
+            print("=================================================")
+            
+        print("\nPress Enter to return to Main menu...")
+        input()
