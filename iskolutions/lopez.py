@@ -139,19 +139,18 @@ class TypeMemorizePup:
             return
         
         if pillar_choice == 1:
-            self.test_strategic_goals("pillar1", ["strategic_goal1", 
-                                        "strategic_goal2", 
-                                        "strategic_goal3"])
+            self.test_strategic_goals("pillar1", [
+                "strategic_goal1", "strategic_goal2", "strategic_goal3"
+                ])
         elif pillar_choice == 2:
-            self.test_strategic_goals("pillar2", ["strategic_goal4", 
-                                        "strategic_goal5", 
-                                        "strategic_goal6"])
+            self.test_strategic_goals("pillar2", [
+                "strategic_goal4", "strategic_goal5", "strategic_goal6"
+                ])
         elif pillar_choice == 3:
-            self.test_strategic_goals("pillar3", ["strategic_goal7", 
-                                        "strategic_goal8", 
-                                        "strategic_goal9",
-                                        "strategic_goal10", 
-                                        "strategic_goal11"])
+            self.test_strategic_goals("pillar3", [
+                "strategic_goal7", "strategic_goal8", "strategic_goal9", 
+                "strategic_goal10", "strategic_goal11"
+                ])
         elif pillar_choice == 4:
             return
         else:
@@ -249,10 +248,11 @@ class TypeMemorizePup:
         for pillar_key, pillar_data in self.content["pillars"].items():
             print(f"\n{pillar_data['name']} ({pillar_key.upper()}):")
             
-            for sg_key, sg_value in (pillar_data["strategic_goals"]
-                                     .items()):
-                sg_number = sg_key.split("strategic_goal")[1]
-                print(f"  SG{sg_number}: {sg_value}")
+            for strategic_goal_key, strategic_goal_value in (
+                    pillar_data["strategic_goals"].items()):
+                strategic_goal_number = (
+                    strategic_goal_key.split("strategic_goal")[1])
+                print(f"SG{strategic_goal_number}: {strategic_goal_value}")
         
         print("\n=================================================")
         print("\nPress Enter to return to Main menu...")
@@ -305,7 +305,6 @@ class TypeMemorizePup:
             system("cls")
 
     def display_accuracy_feedback(self, accuracy):
-        """Display feedback message based on accuracy score."""
         if accuracy >= EXCELLENT:
             print("\nExcellent! You've mastered PUP's "
                 + "vision, mission, values and goals!")
@@ -317,6 +316,8 @@ class TypeMemorizePup:
             print("\nKeep studying PUP's vision, mission, values and "
                   + "goals!")
             print("Because finals is waving...")
+        input()
+        system("cls")
             
     def process_choice(self, choice):
         if choice == 1:
