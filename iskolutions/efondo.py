@@ -58,6 +58,12 @@ class BudgetTracker:
         self.transactions.append(("Expense", amount))
         print(f"\nExpense of ${amount:.2f} added successfully.")
         input("Press enter to continue...")
+    
+    def view_balance(self):
+        system("cls")
+        print("\n--- Current Balance ---")
+        print(f"Your Current balance is: ${self.balance:.2f}")
+        input("\nPress enter to continue...")
 
     def display_choice(self):
         system("cls")
@@ -84,7 +90,7 @@ class BudgetTracker:
         elif choice == 2:
             self.add_expense()
         elif choice == 3:
-            pass
+            self.view_balance()
         elif choice == 4:
             pass
         elif choice == 5:
