@@ -1,5 +1,12 @@
 from os import system
 
+UNSET_OPTION = -1
+EXIT_OPTION = 6
+PERCENTAGE_MULTIPLIER = 100
+EXCELLENT = 90
+VERY_GOOD = 70
+GOOD = 50
+
 class TypeMemorizePup:
     def __init__(self):
         self.content = {
