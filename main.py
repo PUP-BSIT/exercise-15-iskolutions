@@ -1,4 +1,4 @@
-from iskolutions import causon
+from iskolutions import causon, franco
 from os import system
 
 UNSET_OPTION = -1
@@ -7,7 +7,7 @@ EXIT_OPTION = 6
 def display_get_choice():
     print("============Select an Option============")
     print("1. Miko Lorenz O. Causon")
-    print("2. ")
+    print("2. Fernette Pearl M. Franco")
     print("3. ")
     print("4. ")
     print("5. ")
@@ -29,7 +29,8 @@ def process_choice(choice):
             dice_roller = causon.DiceRoller()
             dice_roller.menu()
         case 2:
-            pass
+            franco_calculator = franco.FrancoCalculator()
+            franco_calculator.menu()
         case 3:
             pass
         case 4:
