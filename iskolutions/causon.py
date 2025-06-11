@@ -9,4 +9,7 @@ UNSET_OPTION = -1
 EXIT_OPTION = 8
 
 class DiceRoller:
-    pass
+    def __init__(self):
+        self.dice = list(DEFAULT_DICE)
+        self.roll_history = list(DEFAULT_HISTORY)
+        self.statistics = dict(DEFAULT_STATISTICS)
