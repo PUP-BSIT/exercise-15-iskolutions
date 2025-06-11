@@ -47,3 +47,38 @@ class FrancoCalculator:
             print(f"{self.num1} and {self.num2} → Result: {self.result}")
         else:
             print("No result to display.")
+
+    def menu(self):
+        while True:
+            self.clear_screen()
+            print("=== Franco Calculator Menu ===")
+            print("1. Add")
+            print("2. Subtract")
+            print("3. Multiply")
+            print("4. Divide")
+            print("5. Power")
+            print("6. Back to Main Menu")
+
+            choice = input("Choose operation: ")
+
+            if choice == '6':
+                break
+
+            if choice in ['1', '2', '3', '4', '5']:
+                self.input_numbers()
+
+                if choice == '1':
+                    self.add()
+                elif choice == '2':
+                    self.subtract()
+                elif choice == '3':
+                    self.multiply()
+                elif choice == '4':
+                    self.divide()
+                elif choice == '5':
+                    self.power()
+
+                input("\nPress Enter to continue...")
+            else:
+                print("Invalid choice. Try again.")
+                input("Press Enter to continue...")
