@@ -76,6 +76,7 @@ class FrancoCalculator:
         else:
             print("\nInvalid choice. Try again.")
             input("Press enter to return...")
+            
         return False  #Continue menu loop
     
     def display_choice(self):
