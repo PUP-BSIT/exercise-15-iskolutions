@@ -163,7 +163,7 @@ class TypeMemorizePup:
 
     def test_strategic_goals(self, pillar_key, strategic_goal_key):
         pillar_name = self.content["pillars"][pillar_key]["name"]
-        print(f"============== PILLAR: {pillar_name} ===============")
+        print(f"\n========= PILLAR: {pillar_name} ===========")
         self.display_answer_guidelines()
 
         for strategic_goal in strategic_goal_key:
