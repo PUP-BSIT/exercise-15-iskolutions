@@ -35,6 +35,7 @@ class FrancoCalculator:
         else:
             print("Error: Division by zero.")
             self.result = None
+            
         self.display_result()
 
     def power(self):
