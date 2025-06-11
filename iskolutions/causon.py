@@ -85,6 +85,15 @@ class DiceRoller:
                 break
             
             print("Please enter a valid, and positive number.")
+     
+    def view_history(self):
+        system("cls")
+        print("Roll History")
+        
+        for number, value in enumerate(reversed(self.roll_history), 1):
+            print(f"Roll #{number}: {"\t".join(map(str, value))}")
+        
+        input("\nPress Enter to Continue.")
                 
     def display_get_choice(self):
         system("cls")
@@ -114,7 +123,7 @@ class DiceRoller:
         elif choice == 3:
             self.set_dice()
         elif choice == 4:
-            pass
+            self.view_history()
         elif choice == 5:
             pass
         elif choice == 6:
