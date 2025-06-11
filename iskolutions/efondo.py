@@ -48,3 +48,9 @@ class BudgetTracker:
         print("\nInvalid choice. Try again.")
         input("Press enter to return...")
         return False  #Continue menu loop
+    
+    def menu(self):
+        choice = UNSET_OPTION
+        while choice != EXIT_OPTION:
+            choice = self.display_choice()
+            self.process_choice(choice)
