@@ -131,9 +131,10 @@ class BudgetTracker:
             print("\nReturning to main menu...")
             input("Press enter to continue...")
             return True  #Exit menu loop
-        
-        print("\nInvalid choice. Try again.")
-        input("Press enter to return...")
+        else:
+            print("\nInvalid choice. Try again.")
+            input("Press enter to return...")
+            
         return False  #Continue menu loop
     
     def menu(self):
