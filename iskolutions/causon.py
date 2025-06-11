@@ -89,6 +89,9 @@ class DiceRoller:
         system("cls")
         print("Roll History")
         
+        if self.roll_history == []:
+            print("The roll history is currently empty.")
+        
         for number, value in enumerate(reversed(self.roll_history), 1):
             print(f"Roll #{number}: {"\t".join(map(str, value))}")
         
