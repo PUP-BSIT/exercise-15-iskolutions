@@ -112,6 +112,17 @@ class DiceRoller:
             print(f"{key}: {value}")
         
         input("\nPress Enter to Continue.")
+     
+    def reset_statistics(self):
+        system("cls")
+        if self.get_yes_no_input("Would you like to reset the statistics" 
+                               + " from this session? [yes/no]: "):
+            self.statistics = dict(DEFAULT_STATISTICS)
+            print("Statistics for this session has been reset.")
+        else:
+            print("Statistics is not reset.")
+            
+        input("\nPress Enter to Continue.")
                 
     def display_get_choice(self):
         system("cls")
@@ -147,7 +158,7 @@ class DiceRoller:
         elif choice == 6:
             self.view_statistics()
         elif choice == 7:
-            pass
+            self.reset_statistics()
         elif choice == 8:
             system("cls")
         else:
