@@ -207,3 +207,34 @@ class TypeMemorizePup:
         
         print("\nPress Enter to return to Main menu...")
         input()
+
+    def know_pup(self):
+        print("==================== KNOW PUP =======================")
+        print("\n--- VISION ---")
+        print(self.content["vision"])
+        
+        print("\n--- MISSION ---")
+        print(self.content["mission"])
+        
+        print("\n--- CORE VALUES (INSPIRED) ---")
+        print("I - " + self.content["core_values"]["i1"])
+        print("N - " + self.content["core_values"]["n"])
+        print("S - " + self.content["core_values"]["s"])
+        print("P - " + self.content["core_values"]["p"])
+        print("I - " + self.content["core_values"]["i2"])
+        print("R - " + self.content["core_values"]["r"])
+        print("E - " + self.content["core_values"]["e"])
+        print("D - " + self.content["core_values"]["d"])
+        
+        print("\n--- PILLARS AND STRATEGIC GOALS ---")
+        for pillar_key, pillar_data in self.content["pillars"].items():
+            print(f"\n{pillar_data['name']} ({pillar_key.upper()}):")
+            
+            for sg_key, sg_value in (pillar_data["strategic_goals"]
+                                     .items()):
+                sg_number = sg_key.split("strategic_goal")[1]
+                print(f"  SG{sg_number}: {sg_value}")
+        
+        print("\n=================================================")
+        print("\nPress Enter to return to Main menu...")
+        input()
