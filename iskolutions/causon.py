@@ -37,7 +37,7 @@ class DiceRoller:
             system("cls")
             print("You rolled: ")
             rolled_dice = random.choices(self.dice, k=number_of_dice)
-            self.roll_history.insert(0, rolled_dice) # Insert at index 0
+            self.roll_history.append(rolled_dice)
             self.statistics["Total Rolls"] += 1
             self.statistics["Total Score"] += sum(rolled_dice)
             print("\t".join(map(str, rolled_dice)))
@@ -92,7 +92,7 @@ class DiceRoller:
         if self.roll_history == []:
             print("The roll history is currently empty.")
         
-        for number, value in enumerate(reversed(self.roll_history), 1):
+        for number, value in enumerate(self.roll_history, 1):
             print(f"Roll #{number}: {"\t".join(map(str, value))}")
         
         input("\nPress Enter to Continue.")
