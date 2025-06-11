@@ -71,6 +71,20 @@ class DiceRoller:
                 break
             
             print("Enter a positive number.")
+    
+    def set_dice(self):
+        # Prompt user for the number of dice faces until it gets a valid input
+        while True:
+            system("cls")
+            prompt = "Enter the number of sides the dice should have: "
+            num_of_sides = self.get_validated_number_input(prompt)
+            
+            # Break the loop if the number is valid and positive
+            if num_of_sides and num_of_sides >= 0:
+                self.dice = list(range(1, num_of_sides + 1))
+                break
+            
+            print("Please enter a valid, and positive number.")
                 
     def display_get_choice(self):
         system("cls")
@@ -98,7 +112,7 @@ class DiceRoller:
         elif choice == 2:
             self.roll_multiple_dice()
         elif choice == 3:
-            pass
+            self.set_dice()
         elif choice == 4:
             pass
         elif choice == 5:
