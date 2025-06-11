@@ -127,31 +127,33 @@ class TypeMemorizePup:
         
         try:
             pillar_choice = int(input("\nEnter your choice (1-4): "))
-            if pillar_choice == 1:
-                self.test_strategic_goals("pillar1", ["strategic_goal1", 
-                                             "strategic_goal2", 
-                                             "strategic_goal3"])
-            elif pillar_choice == 2:
-                self.test_strategic_goals("pillar2", ["strategic_goal4", 
-                                             "strategic_goal5", 
-                                             "strategic_goal6"])
-            elif pillar_choice == 3:
-                self.test_strategic_goals("pillar3", ["strategic_goal7", 
-                                             "strategic_goal8", 
-                                             "strategic_goal9",
-                                             "strategic_goal10", 
-                                             "strategic_goal11"])
-            elif pillar_choice == 4:
-                return
-            else:
-                system("cls")
-                print("Invalid choice. Please select 1-4.")
-                print("\nPress Enter to continue...")
-                input()
-                self.test_pillars()
         except ValueError:
             system("cls")
             print("Invalid input. Please enter a valid input.")
+            print("\nPress Enter to continue...")
+            input()
+            self.test_pillars()
+            return
+        
+        if pillar_choice == 1:
+            self.test_strategic_goals("pillar1", ["strategic_goal1", 
+                                        "strategic_goal2", 
+                                        "strategic_goal3"])
+        elif pillar_choice == 2:
+            self.test_strategic_goals("pillar2", ["strategic_goal4", 
+                                        "strategic_goal5", 
+                                        "strategic_goal6"])
+        elif pillar_choice == 3:
+            self.test_strategic_goals("pillar3", ["strategic_goal7", 
+                                        "strategic_goal8", 
+                                        "strategic_goal9",
+                                        "strategic_goal10", 
+                                        "strategic_goal11"])
+        elif pillar_choice == 4:
+            return
+        else:
+            system("cls")
+            print("Invalid choice. Please select 1-4.")
             print("\nPress Enter to continue...")
             input()
             self.test_pillars()
