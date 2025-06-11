@@ -7,3 +7,6 @@ DEFAULT_STATISTICS = {
 }
 UNSET_OPTION = -1
 EXIT_OPTION = 8
+
+class DiceRoller:
+    pass
