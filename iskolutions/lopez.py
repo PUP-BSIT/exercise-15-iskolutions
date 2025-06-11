@@ -267,3 +267,45 @@ class TypeMemorizePup:
             print("Press Enter to continue...")
             input()
             return UNSET_OPTION
+        
+    def process_choice(self, choice):
+        match choice:
+            case 1:
+                self.test_vision()
+            case 2:
+                self.test_mission()
+            case 3:
+                self.test_pillars()
+            case 4:
+                self.test_core_value()
+            case 5:
+                self.know_pup()
+            case 6:
+                print("=========== FINAL SCORE ===========")
+                print(f"Correct answers: {self.score}/"
+                      + f"{self.attempt}")
+
+                if self.attempt > 0:
+                    accuracy = (self.score / 
+                                self.attempt) * PERCENTAGE_MULTIPLIER
+                    print(f"Accuracy: {accuracy}%")
+
+                    if accuracy >= EXCELLENT:
+                        print("\nExcellent! You've mastered PUP's "
+                              + "vision, mission, values and goals!")
+                    elif accuracy >= VERY_GOOD:
+                        print("\nVery good! You know PUP well!")
+                    elif accuracy >= GOOD:
+                        print("\nGood effort! Keep practicing!")
+                    else:
+                        print("\nKeep studying PUP's vision, "
+                              + "mission, values and goals!")
+                        print("Because finals is waving...")
+                else:
+                    print("\nNo attempts made yet!")
+                print("==================================")
+                return EXIT_OPTION
+            case _:
+                print("Invalid choice! Enter a valid choice.")
+                print("Press Enter to continue...")
+                input()
