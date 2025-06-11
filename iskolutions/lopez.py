@@ -248,3 +248,22 @@ class TypeMemorizePup:
               + "will NOT be counted.")
         print("- Proper comma placement is REQUIRED to be counted")
         print("=====================================================")
+
+    def display_get_choice(self):
+        print("\n====== WELCOME TO JAKIM'S TYPE & MEMORIZE PUP ======")
+        print("What option would you like to test first?")
+        print("1. Vission")
+        print("2. Mission")
+        print("3. Strategic Goals (3 Pillars)")
+        print("4. Core Values")
+        print("5. Know PUP ") 
+        print("6. Exit")
+        print("=====================================================")
+        
+        try:
+            return int(input("\nEnter your choice: "))
+        except ValueError:
+            print("Invalid input! Enter a valid input.")
+            print("Press Enter to continue...")
+            input()
+            return UNSET_OPTION
