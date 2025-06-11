@@ -1,4 +1,5 @@
 from os import system
+import random
 
 DEFAULT_DICE = [1, 2, 3, 4, 5, 6]
 DEFAULT_NUMBER_OF_DICE = 1
@@ -28,6 +29,25 @@ class DiceRoller:
                 return False
             
             print("Invalid input. Please enter 'yes' or 'no'.")
+    
+    def roll_dice(self, number_of_dice):
+        # Roll dice repeatedly until user says no.
+        while True:
+            # Roll and display
+            system("cls")
+            print("You rolled: ")
+            rolled_dice = random.choices(self.dice, k=number_of_dice)
+            self.roll_history.insert(0, rolled_dice) # Insert at index 0
+            self.statistics["Total Rolls"] += 1
+            self.statistics["Total Score"] += sum(rolled_dice)
+            print("\t".join(map(str, rolled_dice)))
+            
+            # Ask to continue
+            if not self.get_yes_no_input("\nRoll again? [yes/no]: "):
+                # Stop if user says no
+                break
+            
+        input("\nPress Enter to Continue...")
         
     def display_get_choice(self):
         system("cls")
@@ -51,7 +71,7 @@ class DiceRoller:
     
     def evaluate_choice(self, choice):
         if choice == 1:
-            pass
+            self.roll_dice(DEFAULT_NUMBER_OF_DICE)
         elif choice == 2:
             pass
         elif choice == 3:
