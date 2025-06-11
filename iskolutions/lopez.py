@@ -238,3 +238,13 @@ class TypeMemorizePup:
         print("\n=================================================")
         print("\nPress Enter to return to Main menu...")
         input()
+
+    def display_answer_guidelines(self):
+        print("Note: \n- Answer must be COMPLETE, if not, it is NOT "
+              + "counted.")
+        print("- It is CASE-INSENSITIVE, meaning, upper and lower "
+              + "case are not distinct from each other.")
+        print("- INCOMPLETE answer or any probable minor mistakes "
+              + "will NOT be counted.")
+        print("- Proper comma placement is REQUIRED to be counted")
+        print("=====================================================")
