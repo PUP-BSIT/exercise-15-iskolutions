@@ -6,10 +6,7 @@ PERCENTAGE_MULTIPLIER = 100
 EXCELLENT = 90
 VERY_GOOD = 70
 GOOD = 50
-
-class TypeMemorizePup:
-    def __init__(self):
-        self.content = {
+PUP_STRATEGIC_PLAN = {
             "vision": "A Leading Comprehensive Polytechnic University "
             + "in Asia",
             "mission": "Advance an Inclusive, Equitable, and Globally "
@@ -70,8 +67,14 @@ class TypeMemorizePup:
                 }
             }
         }
-        self.score = 0
-        self.attempt = 0
+DEFAULT_SCORE = 0
+DEFAULT_ATTEMPT = 0
+
+class TypeMemorizePup:
+    def __init__(self):
+        self.content = PUP_STRATEGIC_PLAN
+        self.score = DEFAULT_SCORE
+        self.attempt = DEFAULT_ATTEMPT
 
     def test_vision(self):
         system("cls")
