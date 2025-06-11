@@ -249,10 +249,11 @@ class TypeMemorizePup:
         for pillar_key, pillar_data in self.content["pillars"].items():
             print(f"\n{pillar_data['name']} ({pillar_key.upper()}):")
             
-            for sg_key, sg_value in (pillar_data["strategic_goals"]
-                                     .items()):
-                sg_number = sg_key.split("strategic_goal")[1]
-                print(f"  SG{sg_number}: {sg_value}")
+            for strategic_goal_key, strategic_goal_value in (
+                    pillar_data["strategic_goals"].items()):
+                strategic_goal_number = (
+                    strategic_goal_key.split("strategic_goal")[1])
+                print(f"SG{strategic_goal_number}: {strategic_goal_value}")
         
         print("\n=================================================")
         print("\nPress Enter to return to Main menu...")
