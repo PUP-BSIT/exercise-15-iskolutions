@@ -8,3 +8,11 @@ class FrancoCalculator:
 
     def clear_screen(self):
         os.system("cls")
+
+    def input_numbers(self):
+        try:
+            self.num1 = float(input("Enter first number: "))
+            self.num2 = float(input("Enter second number: "))
+        except ValueError:
+            print("Invalid input. Please enter numbers.")
+            self.input_numbers()
