@@ -94,6 +94,17 @@ class DiceRoller:
             print(f"Roll #{number}: {"\t".join(map(str, value))}")
         
         input("\nPress Enter to Continue.")
+     
+    def reset_history(self):
+        system("cls")
+        if self.get_yes_no_input("Would you like to reset the rolling history?" 
+                               + " [yes/no]:"):
+            self.roll_history = list(DEFAULT_HISTORY)
+            print("Rolling history for this session has been reset.")
+        else:
+            print("History is not reset.")
+            
+        input("\nPress Enter to Continue.")
                 
     def display_get_choice(self):
         system("cls")
@@ -125,7 +136,7 @@ class DiceRoller:
         elif choice == 4:
             self.view_history()
         elif choice == 5:
-            pass
+            self.reset_history()
         elif choice == 6:
             pass
         elif choice == 7:
