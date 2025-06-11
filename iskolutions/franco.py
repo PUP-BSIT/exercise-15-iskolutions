@@ -40,3 +40,10 @@ class FrancoCalculator:
     def power(self):
         self.result = self.num1 ** self.num2
         self.display_result()
+
+    def display_result(self):
+        print("\n[Result]")
+        if self.result is not None:
+            print(f"{self.num1} and {self.num2} → Result: {self.result}")
+        else:
+            print("No result to display.")
