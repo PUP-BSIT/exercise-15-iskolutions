@@ -173,3 +173,37 @@ class TypeMemorizePup:
         
         print("\nPress Enter to return to Main menu...")
         input()
+
+    def test_core_value(self):
+        print("================ PUP - CORE VALUES =================")
+        print("\nI N S P I R E D: ")
+        
+        letters = ["i", "n", "s", "p", "i", "r", "e", "d"]
+        core_values = [
+            self.content["core_values"]["i1"],  
+            self.content["core_values"]["n"],
+            self.content["core_values"]["s"],
+            self.content["core_values"]["p"],
+            self.content["core_values"]["i2"],  
+            self.content["core_values"]["r"],
+            self.content["core_values"]["e"], 
+            self.content["core_values"]["d"]
+        ]
+        
+        for letter, core_value in zip(letters, core_values):
+            user_input = input(f"\n{letter.upper()} - ").lower().strip()
+            self.attempt += 1
+            
+            if user_input == core_value.lower().strip():
+                print("=============================================")
+                print("Correct! You got it right!")
+                print("=============================================")
+                self.score += 1
+            else:
+                print("\nIncorrect. The correct answer is:")
+                print("=============================================")
+                print(f"{core_value}")
+                print("=============================================")
+        
+        print("\nPress Enter to return to Main menu...")
+        input()
