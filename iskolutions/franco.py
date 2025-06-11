@@ -82,3 +82,7 @@ class FrancoCalculator:
             else:
                 print("Invalid choice. Try again.")
                 input("Press Enter to continue...")
+
+if __name__ == "__main__":
+    calculator = FrancoCalculator()
+    calculator.menu()
