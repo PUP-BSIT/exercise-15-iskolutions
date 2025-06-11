@@ -10,6 +10,28 @@ class BudgetTracker:
         self.balance =  MIN_AMOUNT
         self.transactions = []
     
+    def add_income(self):
+        system("cls")
+        print("\n--- Add Income ---")
+        amount = input("Enter income amount: $")
+        
+        try:
+            amount = float(amount)
+        except ValueError:
+            print("\nInvalid input. Please enter a number")
+            input("Press enter to return...")
+            return
+
+        if amount <= MIN_AMOUNT:
+            print("\nAmount must be greater than 0.")
+            input("Press enter to return...")
+            return
+        
+        self.balance += amount 
+        self.transactions.append(("Income", amount))
+        print(f"\nIncome of ${amount:.2f} added successfully.")
+        input("Press enter to continue...")
+        
     def display_choice(self):
         system("cls")
         print(f"\n========== {self.name}'s Budget Tracker ==========")
