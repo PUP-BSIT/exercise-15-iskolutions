@@ -65,6 +65,24 @@ class BudgetTracker:
         print(f"Your Current balance is: ${self.balance:.2f}")
         input("\nPress enter to continue...")
 
+    def view_transactions(self):
+        system("cls")
+        print("\n--- Transaction History ---")
+
+        if not self.transactions:
+            print("No transactions recorded yet.")
+            input("\nPress enter to continue...")
+            return
+        
+        count = 1
+        for transaction in self.transactions:
+            transaction_type = transaction[0]
+            amount = transaction[1]
+            print(f"{count}. {transaction_type}: ${amount:.2f}")
+            count += 1
+        
+        input("\nPress enter to continue...")
+
     def display_choice(self):
         system("cls")
         print(f"\n========== {self.name}'s Budget Tracker ==========")
@@ -92,7 +110,7 @@ class BudgetTracker:
         elif choice == 3:
             self.view_balance()
         elif choice == 4:
-            pass
+            self.view_transactions()
         elif choice == 5:
             pass
         elif choice == 6:
