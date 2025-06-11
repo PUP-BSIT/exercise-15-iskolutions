@@ -69,7 +69,6 @@ class FrancoCalculator:
             self.input_numbers()
             self.power()
         elif choice == 6:
-            print("\nReturning to main menu...")
             input("Press enter to continue...")
             return True  #Exit menu loop
         else:
