@@ -48,7 +48,7 @@ class DiceRoller:
             
         input("\nPress Enter to Continue...")
         
-    def get_validated_number_input(self, prompt):
+    def get_number_input(self, prompt):
         system("cls")
         try:
             number_input = int(input(prompt))
@@ -62,7 +62,7 @@ class DiceRoller:
         # Prompt user for number of rolls until valid input is received.
         while True:
             prompt = "Enter how many dice to roll: "
-            number_of_dice = self.get_validated_number_input(prompt)
+            number_of_dice = self.get_number_input(prompt)
             
             # End the loop if number is valid and positive
             if number_of_dice and number_of_dice > 0:
@@ -76,7 +76,7 @@ class DiceRoller:
         while True:
             system("cls")
             prompt = "Enter the number of sides the dice should have: "
-            num_of_sides = self.get_validated_number_input(prompt)
+            num_of_sides = self.get_number_input(prompt)
             
             # Break the loop if the number is valid and positive
             if num_of_sides and num_of_sides >= 0:
