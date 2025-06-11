@@ -15,6 +15,19 @@ class DiceRoller:
         self.dice = list(DEFAULT_DICE)
         self.roll_history = list(DEFAULT_HISTORY)
         self.statistics = dict(DEFAULT_STATISTICS)
+    
+    def get_yes_no_input(self, prompt):
+        # Asks the user repeatedly until it answers 'yes' / 'y' or 'no' / 'n'
+        while True:
+            user_input = input(prompt).strip().lower()
+            
+            if user_input in ('yes', 'y'):
+                return True
+            
+            if user_input in ('no', 'n'):
+                return False
+            
+            print("Invalid input. Please enter 'yes' or 'no'.")
         
     def display_get_choice(self):
         system("cls")
