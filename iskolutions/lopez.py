@@ -143,3 +143,33 @@ class TypeMemorizePup:
             print("\nPress Enter to continue...")
             input()
             self.test_pillars()
+
+    def test_strategic_goals(self, pillar_key, strategic_goal_key):
+        pillar_name = self.content["pillars"][pillar_key]["name"]
+        print(f"============== PILLAR: {pillar_name} ===============")
+        self.display_answer_guidelines()
+
+        for strategic_goal in strategic_goal_key:
+            goal_number = strategic_goal.split("strategic_goal")[1]
+            display_label = f"SG{goal_number}"
+            correct_answer = (self.content["pillars"][pillar_key]
+                              ["strategic_goals"][strategic_goal])
+            
+            print(f"\n{display_label}:")
+            user_input = input().lower().strip()
+            self.attempt += 1
+            
+            if user_input == correct_answer.lower().strip():
+                print()
+                print("=============================================")
+                print("Correct! You got it right!")
+                print("=============================================")
+                self.score += 1
+            else:
+                print("\nIncorrect. The correct answer is:")
+                print("=============================================")
+                print(f"{correct_answer}")
+                print("=============================================")
+        
+        print("\nPress Enter to return to Main menu...")
+        input()
