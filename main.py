@@ -2,7 +2,7 @@ from iskolutions import causon, franco, efondo, lopez
 from os import system
 
 UNSET_OPTION = -1
-EXIT_OPTION = 6
+EXIT_OPTION = 5
 
 def display_get_choice():
     print("============Select an Option============")
