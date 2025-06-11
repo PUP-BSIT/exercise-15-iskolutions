@@ -83,6 +83,20 @@ class BudgetTracker:
         
         input("\nPress enter to continue...")
 
+    def reset_budget(self):
+        system("cls")
+        print("\n--- Reset Budget ---")
+        confirmation = input("Do you want to reset tracker? (y/n): ").lower()
+
+        if confirmation == 'y':
+            self.balance = MIN_AMOUNT
+            self.transactions.clear()
+            print("\nBudget has been reset.")
+            input("Press enter to continue...")
+        else:
+            print("\nCancelled. Budget was not reset.")
+            input("Press enter to continue...")
+
     def display_choice(self):
         system("cls")
         print(f"\n========== {self.name}'s Budget Tracker ==========")
@@ -112,7 +126,7 @@ class BudgetTracker:
         elif choice == 4:
             self.view_transactions()
         elif choice == 5:
-            pass
+            self.reset_budget()
         elif choice == 6:
             print("\nReturning to main menu...")
             input("Press enter to continue...")
