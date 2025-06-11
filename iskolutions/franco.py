@@ -68,3 +68,22 @@ class FrancoCalculator:
             print("\nInvalid choice. Try again.")
             input("Press enter to return...")
         return False  #Continue menu loop
+    
+    def display_choice(self):
+        os.system("cls")
+        print(f"=== Franco Calculator Menu ===")
+        print("1. Add")
+        print("2. Subtract")
+        print("3. Multiply")
+        print("4. Divide")
+        print("5. Power")
+        print("6. Back to Main Menu")
+
+        try:
+            choice = int(input("Enter your choice: "))
+            os.system("cls")
+            return choice
+        except ValueError:
+            os.system("cls")
+            print("Invalid input! Please enter a number.")
+            return UNSET_OPTION
