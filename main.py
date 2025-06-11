@@ -10,8 +10,7 @@ def display_get_choice():
     print("2. Fernette Pearl M. Franco")
     print("3. Aaron Kyle D. Efondo")
     print("4. Jakim D. Lopez")
-    print("5. ")
-    print("6. Exit")
+    print("5. Exit")
     print("========================================")
     
     try:
