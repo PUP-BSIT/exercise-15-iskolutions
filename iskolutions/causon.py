@@ -178,6 +178,3 @@ class DiceRoller:
             # display menu
             choice = self.display_get_choice()
             self.evaluate_choice(choice)
-            
-game = DiceRoller()
-game.menu()
