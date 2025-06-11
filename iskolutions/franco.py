@@ -52,6 +52,8 @@ class FrancoCalculator:
         else:
             print("No result to display.")
 
+        input("Press enter to continue...")
+
     def process_choice(self, choice):
         if choice == 1:
             self.input_numbers()
@@ -88,7 +90,6 @@ class FrancoCalculator:
 
         try:
             choice = int(input("Enter your choice: "))
-            os.system("cls")
             return choice
         except ValueError:
             os.system("cls")
