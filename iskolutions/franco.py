@@ -20,3 +20,7 @@ class FrancoCalculator:
     def add(self):
         self.result = self.num1 + self.num2
         self.display_result()
+
+    def subtract(self):
+        self.result = self.num1 - self.num2
+        self.display_result()
