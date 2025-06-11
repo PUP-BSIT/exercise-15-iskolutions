@@ -1,5 +1,8 @@
 import os
 
+UNSET_OPTION = -1
+EXIT_OPTION = 6
+
 class FrancoCalculator:
     def __init__(self):
         self.num1 = 0
@@ -87,3 +90,9 @@ class FrancoCalculator:
             os.system("cls")
             print("Invalid input! Please enter a number.")
             return UNSET_OPTION
+        
+    def run_menu(self):
+        choice = UNSET_OPTION
+        while choice != EXIT_OPTION:
+            choice = self.display_choice()
+            self.process_choice(choice)
