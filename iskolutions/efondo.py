@@ -80,9 +80,9 @@ class BudgetTracker:
         
     def process_choice(self, choice):
         if choice == 1:
-            pass
+            self.add_income()
         elif choice == 2:
-            pass
+            self.add_expense()
         elif choice == 3:
             pass
         elif choice == 4:
