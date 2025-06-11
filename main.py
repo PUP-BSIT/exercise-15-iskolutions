@@ -30,7 +30,7 @@ def process_choice(choice):
             dice_roller.menu()
         case 2:
             franco_calculator = franco.FrancoCalculator()
-            franco_calculator.run_menu()
+            franco_calculator.menu()
         case 3:
             pass
         case 4:
