@@ -49,17 +49,24 @@ class DiceRoller:
             
         input("\nPress Enter to Continue...")
         
+    def get_validated_number_input(self, prompt):
+        system("cls")
+        try:
+            number_input = int(input(prompt))
+        except ValueError:
+            print("Invalid input. Please enter a whole number.")
+            return None
+
+        return number_input
+        
     def roll_multiple_dice(self):
         # Prompt user for number of rolls until valid input is received.
         while True:
-            system("cls")
-            try:
-                number_of_dice = int(input("Enter how many dice to roll: "))
-            except ValueError:
-                print("Invalid input. Please enter a whole number.")
+            prompt = "Enter how many dice to roll: "
+            number_of_dice = self.get_validated_number_input(prompt)
             
             # End the loop if number is valid and positive
-            if number_of_dice > 0:
+            if number_of_dice and number_of_dice > 0:
                 self.roll_dice(number_of_dice)
                 break
             
