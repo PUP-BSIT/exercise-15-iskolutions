@@ -283,6 +283,33 @@ class TypeMemorizePup:
             print("Press Enter to continue...")
             input()
             return UNSET_OPTION
+        
+    def display_final_score(self):
+        print("=========== FINAL SCORE ===========")
+        print(f"Correct answers: {self.score}/"
+              + f"{self.attempt}")
+
+        if self.attempt > 0:
+            accuracy = (self.score / 
+                        self.attempt) * PERCENTAGE_MULTIPLIER
+            print(f"Accuracy: {accuracy}%")
+
+            if accuracy >= EXCELLENT:
+                print("\nExcellent! You've mastered PUP's "
+                      + "vision, mission, values and goals!")
+            elif accuracy >= VERY_GOOD:
+                print("\nVery good! You know PUP well!")
+            elif accuracy >= GOOD:
+                print("\nGood effort! Keep practicing!")
+            else:
+                print("\nKeep studying PUP's vision, "
+                      + "mission, values and goals!")
+                print("Because finals is waving...")
+        else:
+            print("\nNo attempts made yet!")
+        print("==================================")
+        input()
+        system("cls")
 
     def process_choice(self, choice):
         match choice:
@@ -298,30 +325,7 @@ class TypeMemorizePup:
                 self.know_pup()
             case 6:
                 system("cls")
-                print("=========== FINAL SCORE ===========")
-                print(f"Correct answers: {self.score}/"
-                      + f"{self.attempt}")
-
-                if self.attempt > 0:
-                    accuracy = (self.score / 
-                                self.attempt) * PERCENTAGE_MULTIPLIER
-                    print(f"Accuracy: {accuracy}%")
-
-                    if accuracy >= EXCELLENT:
-                        print("\nExcellent! You've mastered PUP's "
-                              + "vision, mission, values and goals!")
-                    elif accuracy >= VERY_GOOD:
-                        print("\nVery good! You know PUP well!")
-                    elif accuracy >= GOOD:
-                        print("\nGood effort! Keep practicing!")
-                    else:
-                        print("\nKeep studying PUP's vision, "
-                              + "mission, values and goals!")
-                        print("Because finals is waving...")
-                else:
-                    print("\nNo attempts made yet!")
-                print("==================================")
-                return EXIT_OPTION
+                self.display_final_score()
             case _:
                 system("cls")
                 print("Invalid choice! Enter a valid choice.")
