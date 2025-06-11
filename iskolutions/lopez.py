@@ -305,7 +305,6 @@ class TypeMemorizePup:
             system("cls")
 
     def display_accuracy_feedback(self, accuracy):
-        """Display feedback message based on accuracy score."""
         if accuracy >= EXCELLENT:
             print("\nExcellent! You've mastered PUP's "
                 + "vision, mission, values and goals!")
@@ -317,6 +316,8 @@ class TypeMemorizePup:
             print("\nKeep studying PUP's vision, mission, values and "
                   + "goals!")
             print("Because finals is waving...")
+        input()
+        system("cls")
             
     def process_choice(self, choice):
         if choice == 1:
