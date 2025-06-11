@@ -71,13 +71,10 @@ class FrancoCalculator:
             self.input_numbers()
             self.power()
         elif choice == 6:
-            input("Press enter to continue...")
-            return True  #Exit menu loop
+            os.system('cls')
         else:
             print("\nInvalid choice. Try again.")
             input("Press enter to return...")
-
-        return False  #Continue menu loop
     
     def display_choice(self):
         os.system("cls")
