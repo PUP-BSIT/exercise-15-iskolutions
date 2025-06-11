@@ -75,15 +75,18 @@ class DiceRoller:
         # Prompt user for the number of dice faces until it gets a valid input
         while True:
             system("cls")
-            prompt = "Enter the number of sides the dice should have: "
+            prompt = "Enter the number of sides the dice should have: [2-100] "
             num_of_sides = self.get_number_input(prompt)
             
             # Break the loop if the number is valid and positive
-            if num_of_sides and num_of_sides > 1:
+            if num_of_sides and (1 < num_of_sides <= 100): # chained comparison
                 self.dice = list(range(1, num_of_sides + 1))
+                print("Dice updated successfully")
+                input("\nPress Enter to Continue.")
                 break
             
             print("Please enter a valid, and positive number.")
+            input("\nPress Enter to Continue.")
      
     def view_history(self):
         system("cls")
