@@ -253,7 +253,7 @@ class TypeMemorizePup:
               + "case are not distinct from each other.")
         print("- INCOMPLETE answer or any probable minor mistakes "
               + "will NOT be counted.")
-        print("- Proper comma placement is REQUIRED to be counted")
+        print("- Proper comma placement is REQUIRED to be counted.")
         print("=====================================================")
 
     def display_get_choice(self):
