@@ -105,3 +105,41 @@ class TypeMemorizePup:
             
         print("\nPress Enter to return to Main menu...")
         input()
+
+    def test_pillars(self):
+        print("================== PUP - PILLARS ===================")
+        print("Which pillar would you like to test?")
+        print("\n1. Teaching and Learning (Pillar 1)")
+        print("2. Research and Extension (Pillar 2)")
+        print("3. Internal Governance (Pillar 3)")
+        print("4. Return to Main Menu")
+        print("=====================================================")
+        
+        try:
+            pillar_choice = int(input("\nEnter your choice (1-4): "))
+            if pillar_choice == 1:
+                self.test_pillar("pillar1", ["strategic_goal1", 
+                                             "strategic_goal2", 
+                                             "strategic_goal3"])
+            elif pillar_choice == 2:
+                self.test_pillar("pillar2", ["strategic_goal4", 
+                                             "strategic_goal5", 
+                                             "strategic_goal6"])
+            elif pillar_choice == 3:
+                self.test_pillar("pillar3", ["strategic_goal7", 
+                                             "strategic_goal8", 
+                                             "strategic_goal9",
+                                             "strategic_goal10", 
+                                             "strategic_goal11"])
+            elif pillar_choice == 4:
+                return
+            else:
+                print("Invalid choice. Please select 1-4.")
+                print("\nPress Enter to continue...")
+                input()
+                self.test_pillars()
+        except ValueError:
+            print("Invalid input. Please enter a valid input.")
+            print("\nPress Enter to continue...")
+            input()
+            self.test_pillars()
