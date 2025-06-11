@@ -267,7 +267,7 @@ class TypeMemorizePup:
         system("cls")
         print("\n====== WELCOME TO JAKIM'S TYPE & MEMORIZE PUP ======")
         print("What option would you like to test first?")
-        print("1. Vission")
+        print("1. Vision")
         print("2. Mission")
         print("3. Strategic Goals (3 Pillars)")
         print("4. Core Values")
