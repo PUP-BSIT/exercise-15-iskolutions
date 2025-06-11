@@ -42,9 +42,8 @@ class DiceRoller:
             self.statistics["Total Score"] += sum(rolled_dice)
             print("\t".join(map(str, rolled_dice)))
             
-            # Ask to continue
+            # Ask to continue and stop if user inputs no
             if not self.get_yes_no_input("\nRoll again? [yes/no]: "):
-                # Stop if user says no
                 break
             
         input("\nPress Enter to Continue...")
