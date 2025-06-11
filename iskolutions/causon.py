@@ -104,6 +104,14 @@ class DiceRoller:
             print("History is not reset.")
             
         input("\nPress Enter to Continue.")
+    
+    def view_statistics(self):
+        system("cls")
+        print("Statistics for this session: ")
+        for key, value in self.statistics.items():
+            print(f"{key}: {value}")
+        
+        input("\nPress Enter to Continue.")
                 
     def display_get_choice(self):
         system("cls")
@@ -137,7 +145,7 @@ class DiceRoller:
         elif choice == 5:
             self.reset_history()
         elif choice == 6:
-            pass
+            self.view_statistics()
         elif choice == 7:
             pass
         elif choice == 8:
