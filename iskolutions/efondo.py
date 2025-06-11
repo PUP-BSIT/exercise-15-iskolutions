@@ -5,4 +5,7 @@ EXIT_OPTION = 6
 MIN_AMOUNT = 0.0
 
 class BudgetTracker:
-    pass
+    def __init__(self, name):
+        self.name = name
+        self.balance =  MIN_AMOUNT
+        self.transactions = []
