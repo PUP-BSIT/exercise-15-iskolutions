@@ -1,4 +1,4 @@
-from iskolutions import causon, franco
+from iskolutions import causon, franco, efondo
 from os import system
 
 UNSET_OPTION = -1
@@ -8,7 +8,7 @@ def display_get_choice():
     print("============Select an Option============")
     print("1. Miko Lorenz O. Causon")
     print("2. Fernette Pearl M. Franco")
-    print("3. ")
+    print("3. Aaron Kyle D. Efondo")
     print("4. ")
     print("5. ")
     print("6. Exit")
@@ -32,7 +32,9 @@ def process_choice(choice):
             franco_calculator = franco.FrancoCalculator()
             franco_calculator.menu()
         case 3:
-            pass
+            user_nickname = input("Enter your nickname: ")
+            budget_tracker = efondo.BudgetTracker(user_nickname)
+            budget_tracker.menu()
         case 4:
             pass
         case 5:
