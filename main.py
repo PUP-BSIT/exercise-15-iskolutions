@@ -38,8 +38,6 @@ def process_choice(choice):
             lopez_game = lopez.TypeMemorizePup()
             lopez_game.menu()
         case 5:
-            pass
-        case 6:
             system("cls")
         case _:
             print("Invalid choice! Please select a valid option.")
