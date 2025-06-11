@@ -79,7 +79,7 @@ class DiceRoller:
             num_of_sides = self.get_number_input(prompt)
             
             # Break the loop if the number is valid and positive
-            if num_of_sides and num_of_sides >= 0:
+            if num_of_sides and num_of_sides > 1:
                 self.dice = list(range(1, num_of_sides + 1))
                 break
             
