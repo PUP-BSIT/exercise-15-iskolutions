@@ -1,17 +1,16 @@
-from iskolutions import causon, franco, efondo
+from iskolutions import causon, franco, efondo, lopez
 from os import system
 
 UNSET_OPTION = -1
-EXIT_OPTION = 6
+EXIT_OPTION = 5
 
 def display_get_choice():
     print("============Select an Option============")
     print("1. Miko Lorenz O. Causon")
     print("2. Fernette Pearl M. Franco")
     print("3. Aaron Kyle D. Efondo")
-    print("4. ")
-    print("5. ")
-    print("6. Exit")
+    print("4. Jakim D. Lopez")
+    print("5. Exit")
     print("========================================")
     
     try:
@@ -36,10 +35,9 @@ def process_choice(choice):
             budget_tracker = efondo.BudgetTracker(user_nickname)
             budget_tracker.menu()
         case 4:
-            pass
+            lopez_game = lopez.TypeMemorizePup()
+            lopez_game.menu()
         case 5:
-            pass
-        case 6:
             system("cls")
         case _:
             print("Invalid choice! Please select a valid option.")
