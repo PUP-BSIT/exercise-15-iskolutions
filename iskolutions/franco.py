@@ -49,37 +49,22 @@ class FrancoCalculator:
         else:
             print("No result to display.")
 
-    def menu(self):
-        operations = {
-            '1': self.add,
-            '2': self.subtract,
-            '3': self.multiply,
-            '4': self.divide,
-            '5': self.power
-        }
-
-        while True:
-            self.clear_screen()
-            print("=== Franco Calculator Menu ===")
-            print("1. Add")
-            print("2. Subtract")
-            print("3. Multiply")
-            print("4. Divide")
-            print("5. Power")
-            print("6. Back to Main Menu")
-
-            choice = input("Choose operation: ")
-
-            # Exit condition is clearly stated early
-            if choice == '6':
-                break  # Exit the menu loop immediately
-
-            operation = operations.get(choice)
-
-            if operation:
-                self.input_numbers()
-                operation()
-            else:
-                print("Invalid choice. Try again.")
-
-            input("\nPress Enter to continue...")
+    def process_choice(self, choice):
+        if choice == 1:
+            self.add()
+        elif choice == 2:
+            self.subtract()
+        elif choice == 3:
+            self.multiply()
+        elif choice == 4:
+            self.divide()
+        elif choice == 5:
+            self.power()
+        elif choice == 6:
+            print("\nReturning to main menu...")
+            input("Press enter to continue...")
+            return True  #Exit menu loop
+        else:
+            print("\nInvalid choice. Try again.")
+            input("Press enter to return...")
+        return False  #Continue menu loop
